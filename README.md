@@ -8,15 +8,38 @@ Codegen tool for Solidity development.
 
 `TBD`
 
-If you want to try this out, clone the repo and run `main.py`
+If you want to try this out, clone the repo and run `python main.py`
 
 ## Commands
+
+### `solcery errsig [<path_to_file>]`
+
+Add error signature comments on top of each `error` declaration if it contains a `/// @dev 0x` comment on top of it.
+
+**Example:**
+
+Given the file `MyContract.sol`, running `solcery errsig MyContract.sol` will update the file adding the contents bellow:
+
+```diff
+contract MyContract {
+-   /// @dev 0x
++   /// @dev 0xbfb4ebcf
+    error Foo();
+-   /// @dev 0x
++   /// @dev 0xdd448093
+    error Bar(uint256 a);
+}
+```
 
 ### `solcery errgen <output_path> [<input_path>]`
 
 Generates a solidity file containing sugar functions to use when expecting errors.
 
-**Example input**:
+**Example:**
+
+Given the file bellow `MyContract.sol` containing some error declarations, running `solcery errgen Errors.sol MyContract.sol` will generate the file `Errors.sol` you can find below.
+
+**MyContract.sol**
 
 ```solidity
 contract MyContract {
@@ -26,7 +49,7 @@ contract MyContract {
 }
 ```
 
-**Example output**:
+**Errors.sol**
 
 ```solidity
 // SPDX-License-Identifier: Unlicense
