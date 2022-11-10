@@ -6,7 +6,7 @@ pragma solidity >=0.8.4;
 library Errors {
 <CONTENT>
 }
-// solhint-enalbe const-name-snakecase"""
+// solhint-enable const-name-snakecase"""
 
 def fnsig(err):
   fnparams = ""

@@ -61,7 +61,7 @@ library Errors {
     function Foo() internal pure returns (bytes memory) { return abi.encodeWithSignature("Foo()"); }
     function Bar(uint256 a) internal pure returns (bytes memory) { return abi.encodeWithSignature("Bar(uint256)", a); }
 }
-// solhint-enalbe const-name-snakecase
+// solhint-enable const-name-snakecase
 ```
 
 **Usage in a foundry test file**:

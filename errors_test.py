@@ -56,7 +56,7 @@ library Errors {
     function Boo(uint256 a, uint256 b) internal pure returns (bytes memory) { return abi.encodeWithSignature(\"Boo(uint256,uint256)\", a, b); }
     function Far(uint256 p1, uint256 p2) internal pure returns (bytes memory) { return abi.encodeWithSignature(\"Far(uint256,uint256)\", p1, p2); }
 }
-// solhint-enalbe const-name-snakecase"""
+// solhint-enable const-name-snakecase"""
 
     output = errors.gen_file_contents(errs)
     assert output == expected, "====\n{}\n!=\n{}\n====".format(output, expected)
