@@ -22,7 +22,7 @@ def add_error_sig_comments(path):
   errs = errors_on_file(path)
 
   for err in errs:
-    sig = Web3.toHex(Web3.keccak(text="{}()".format(err)))[:10]
+    sig = Web3.to_hex(Web3.keccak(text="{}()".format(err)))[:10]
     old = re.compile("^(.*@dev\\s)0x.*(\\n\\s*error\\s{}\\(\\);)".format(err), flags=re.M)
     new = "\g<1>{}\g<2>".format(sig)
     contents = re.sub(old, new, contents)
