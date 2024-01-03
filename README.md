@@ -6,9 +6,13 @@ Codegen tool for Solidity development.
 
 ## Installing
 
-`TBD`
+```bash
+git clone https://github.com/alephao/solcery.git
+cd solcery
+pip install -r requirements.txt
 
-If you want to try this out, clone the repo and run `python main.py`
+python main.py <command>
+```
 
 ## Commands
 
